@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Nordicness Calculator</title>
+        <style>
+            .text{
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+            }
+            .line{
+                background-color: gray;
+                color: gray;
+                height: 3;
+                width: 1000;
+                display: block;
+                margin: 0 auto;
+            }
+            .inp{
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="heading">
+            <h1 class="text">Nordicness Calculator</h1>
+            <br>
+            <li class="line"></li>
+        </div>
+        <br>
+        <div id="main">
+            <h3 class="text">Enter the string array you wish to calculate the nordicness of, below:</h3>
+            <input class="inp" id="input" value="">
+            <br>
+            <button style="display: block; margin: 0 auto;" id="butt">Calculate!</button>
+        </div>
+        <script>
+            const input = document.getElementById("input");
+            const button = document.getElementById("butt");
+
+            const nordic_ur = ["æ","ø","å","ä","ö"];
+
+            function calculate_ur(){
+                let count_ur = 0;
+                for (l of nordic_ur){
+                    for (le of String(input.value)){
+                        if (l === le){
+                            count_ur++
+                        }
+                    }
+                }
+                alert(count_ur);
+            }
+
+            button.onclick = calculate_ur;
+        </script>
+    </body>
+</html>
